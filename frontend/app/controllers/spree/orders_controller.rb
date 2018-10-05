@@ -64,6 +64,7 @@ module Spree
         redirect_back_or_default(spree.root_path)
       else
         respond_with(order) do |format|
+          format.json
           format.html { redirect_to(cart_path(variant_id: variant.id)) }
         end
       end
